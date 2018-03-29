@@ -1,0 +1,24 @@
+<%if params[:notice]%>
+    <p class="alert alert-success"><%= params[:notice] %></p>
+<%end%>
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>City</th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody class="tbody-list">
+    	<% @auctions.each do |auction| %>
+    		<tr>
+    			<td><%= auction.name %></td>
+    			<td><%= auction.city %></td>
+    			<td><%= link_to 'SHOW DETAILS', auction %></td>
+    		</tr>
+  		<% end %>
+    </tbody>
+  </table>
+</div>
